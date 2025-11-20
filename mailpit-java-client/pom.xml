@@ -282,7 +282,7 @@
 		<profile>
 			<id>openapi-generator</id>
 			<properties>
-				<componentName>INSERT_NAME_HERE</componentName>
+				<componentName>mailpit</componentName>
 
 				<generatedDir>${project.basedir}/${generatedDirRelative}</generatedDir>
 				<openApiRelativeGeneratorDir>src/gen</openApiRelativeGeneratorDir>
@@ -331,7 +331,7 @@
 									<goal>generate</goal>
 								</goals>
 								<configuration>
-									<inputSpec>${project.basedir}/../openapi/openapi.yml</inputSpec>
+									<inputSpec>${project.basedir}/../openapi/swagger.json</inputSpec>
 									<generatorName>java</generatorName>
 									<configOptions>
 										<sourceFolder>${openApiRelativeGeneratorDir}</sourceFolder>

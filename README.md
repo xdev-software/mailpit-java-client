@@ -1,10 +1,9 @@
 [![Latest version](https://img.shields.io/maven-central/v/software.xdev/mailpit-java-client?logo=apache%20maven)](https://mvnrepository.com/artifact/software.xdev/mailpit-java-client)
 [![Build](https://img.shields.io/github/actions/workflow/status/xdev-software/mailpit-java-client/check-build.yml?branch=develop)](https://github.com/xdev-software/mailpit-java-client/actions/workflows/check-build.yml?query=branch%3Adevelop)
-[![API Specification Editor](https://img.shields.io/badge/API--Spec-Editor-85ea2d?logo=swagger)](https://editor.swagger.io/?url=https://raw.githubusercontent.com/xdev-software/mailpit-java-client/develop/openapi/openapi.yml)
 
 # mailpit-java-client
 
-This client [is generated](./mailpit-java-client/pom.xml) from an [``openapi.yml``](./openapi/openapi.yml) using [OpenAPI Generator](https://openapi-generator.tech/).
+This client [is generated](./mailpit-java-client/pom.xml) from an [``swagger.json``](./openapi/swagger.json) using [OpenAPI Generator](https://openapi-generator.tech/).
 
 ## Installation
 [Installation guide for the latest release](https://github.com/xdev-software/mailpit-java-client/releases/latest#Installation)

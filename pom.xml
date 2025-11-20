@@ -16,7 +16,6 @@
 
 	<modules>
 		<module>mailpit-java-client</module>
-		<module>mailpit-java-client-demo</module>
 	</modules>
 
 	<properties>

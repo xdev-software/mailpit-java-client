@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<licensePluginReport goal="FORMAT" timestamp="1763632257944">
+    <module artifactId="mailpit-java-client" groupId="software.xdev" version="1.0.0"/>
+    <files>
+        <file path="src/test/java/software/xdev/mailpit/SimpleTest.java" result="NOOP"/>
+        <file path="src/test/java/software/xdev/mailpit/container/MailpitContainer.java" result="NOOP"/>
+    </files>
+</licensePluginReport>

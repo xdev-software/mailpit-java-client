@@ -1,7 +1,7 @@
 [![Latest version](https://img.shields.io/maven-central/v/software.xdev/mailpit-java-client?logo=apache%20maven)](https://mvnrepository.com/artifact/software.xdev/mailpit-java-client)
 [![Build](https://img.shields.io/github/actions/workflow/status/xdev-software/mailpit-java-client/check-build.yml?branch=develop)](https://github.com/xdev-software/mailpit-java-client/actions/workflows/check-build.yml?query=branch%3Adevelop)
 
-# Java Client for [Mailpit](https://github.com/axllent/mailpit)
+# <img src="https://raw.githubusercontent.com/axllent/mailpit/b98700689779aa133c2ddbdb9b19df81165311a9/server/ui/mailpit.svg" height="28" /> Java Client for [Mailpit](https://github.com/axllent/mailpit)
 
 A Java client for [Mailpit's API](https://mailpit.axllent.org/docs/api-v1/).
 

@@ -15,11 +15,9 @@ package software.xdev.mailpit.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import java.util.Locale;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -186,6 +184,7 @@ public class HTMLCheckTotal {
     this.unsupported = unsupported;
   }
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -225,10 +224,7 @@ public class HTMLCheckTotal {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -266,7 +262,7 @@ public class HTMLCheckTotal {
     // add `Nodes` to the URL query string
     if (getNodes() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sNodes%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getNodes()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sNodes%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getNodes()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -276,7 +272,7 @@ public class HTMLCheckTotal {
     // add `Partial` to the URL query string
     if (getPartial() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sPartial%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPartial()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sPartial%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPartial()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -286,7 +282,7 @@ public class HTMLCheckTotal {
     // add `Supported` to the URL query string
     if (getSupported() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sSupported%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSupported()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sSupported%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSupported()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -296,7 +292,7 @@ public class HTMLCheckTotal {
     // add `Tests` to the URL query string
     if (getTests() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sTests%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTests()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sTests%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTests()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -306,7 +302,7 @@ public class HTMLCheckTotal {
     // add `Unsupported` to the URL query string
     if (getUnsupported() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sUnsupported%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getUnsupported()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sUnsupported%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getUnsupported()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

@@ -15,11 +15,9 @@ package software.xdev.mailpit.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import java.util.Locale;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -168,6 +166,7 @@ public class SpamAssassinResponse {
     this.score = score;
   }
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -205,10 +204,7 @@ public class SpamAssassinResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -246,7 +242,7 @@ public class SpamAssassinResponse {
     // add `Error` to the URL query string
     if (getError() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sError%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getError()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sError%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getError()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -256,7 +252,7 @@ public class SpamAssassinResponse {
     // add `IsSpam` to the URL query string
     if (getIsSpam() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sIsSpam%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getIsSpam()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sIsSpam%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getIsSpam()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -267,8 +263,8 @@ public class SpamAssassinResponse {
     if (getRules() != null) {
       for (int i = 0; i < getRules().size(); i++) {
         if (getRules().get(i) != null) {
-          joiner.add(getRules().get(i).toUrlQueryString(String.format(Locale.ROOT, "%sRules%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format(Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getRules().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sRules%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
@@ -276,7 +272,7 @@ public class SpamAssassinResponse {
     // add `Score` to the URL query string
     if (getScore() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sScore%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getScore()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sScore%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getScore()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

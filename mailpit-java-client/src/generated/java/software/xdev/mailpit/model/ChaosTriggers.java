@@ -15,11 +15,9 @@ package software.xdev.mailpit.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import java.util.Locale;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import software.xdev.mailpit.model.ChaosTrigger;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -127,6 +125,7 @@ public class ChaosTriggers {
     this.sender = sender;
   }
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -162,10 +161,7 @@ public class ChaosTriggers {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**

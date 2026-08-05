@@ -15,7 +15,6 @@ package software.xdev.mailpit.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import java.util.Locale;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -138,6 +137,7 @@ public class SetReadStatusParamsRequest {
     this.search = search;
   }
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -173,10 +173,7 @@ public class SetReadStatusParamsRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -215,8 +212,8 @@ public class SetReadStatusParamsRequest {
     if (getIds() != null) {
       for (int i = 0; i < getIds().size(); i++) {
         try {
-          joiner.add(String.format(Locale.ROOT, "%sIDs%s%s=%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format(Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
+          joiner.add(String.format(java.util.Locale.ROOT, "%sIDs%s%s=%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
               URLEncoder.encode(String.valueOf(getIds().get(i)), "UTF-8").replaceAll("\\+", "%20")));
         } catch (UnsupportedEncodingException e) {
           // Should never happen, UTF-8 is always supported
@@ -228,7 +225,7 @@ public class SetReadStatusParamsRequest {
     // add `Read` to the URL query string
     if (getRead() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sRead%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRead()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sRead%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRead()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -238,7 +235,7 @@ public class SetReadStatusParamsRequest {
     // add `Search` to the URL query string
     if (getSearch() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sSearch%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSearch()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sSearch%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSearch()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

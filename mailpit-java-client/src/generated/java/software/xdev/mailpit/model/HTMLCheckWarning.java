@@ -15,11 +15,9 @@ package software.xdev.mailpit.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import java.util.Locale;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -367,6 +365,7 @@ public class HTMLCheckWarning {
     this.URL = URL;
   }
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -416,10 +415,7 @@ public class HTMLCheckWarning {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -457,7 +453,7 @@ public class HTMLCheckWarning {
     // add `Category` to the URL query string
     if (getCategory() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sCategory%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCategory()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sCategory%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCategory()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -467,7 +463,7 @@ public class HTMLCheckWarning {
     // add `Description` to the URL query string
     if (getDescription() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sDescription%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDescription()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sDescription%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDescription()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -477,7 +473,7 @@ public class HTMLCheckWarning {
     // add `Keywords` to the URL query string
     if (getKeywords() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sKeywords%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getKeywords()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sKeywords%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getKeywords()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -488,8 +484,8 @@ public class HTMLCheckWarning {
     if (getNotesByNumber() != null) {
       for (String _key : getNotesByNumber().keySet()) {
         try {
-          joiner.add(String.format(Locale.ROOT, "%sNotesByNumber%s%s=%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format(Locale.ROOT, "%s%d%s", containerPrefix, _key, containerSuffix),
+          joiner.add(String.format(java.util.Locale.ROOT, "%sNotesByNumber%s%s=%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, _key, containerSuffix),
               getNotesByNumber().get(_key), URLEncoder.encode(String.valueOf(getNotesByNumber().get(_key)), "UTF-8").replaceAll("\\+", "%20")));
         } catch (UnsupportedEncodingException e) {
           // Should never happen, UTF-8 is always supported
@@ -502,8 +498,8 @@ public class HTMLCheckWarning {
     if (getResults() != null) {
       for (int i = 0; i < getResults().size(); i++) {
         if (getResults().get(i) != null) {
-          joiner.add(getResults().get(i).toUrlQueryString(String.format(Locale.ROOT, "%sResults%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format(Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getResults().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sResults%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
@@ -516,7 +512,7 @@ public class HTMLCheckWarning {
     // add `Slug` to the URL query string
     if (getSlug() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sSlug%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSlug()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sSlug%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSlug()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -527,8 +523,8 @@ public class HTMLCheckWarning {
     if (getTags() != null) {
       for (int i = 0; i < getTags().size(); i++) {
         try {
-          joiner.add(String.format(Locale.ROOT, "%sTags%s%s=%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format(Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
+          joiner.add(String.format(java.util.Locale.ROOT, "%sTags%s%s=%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
               URLEncoder.encode(String.valueOf(getTags().get(i)), "UTF-8").replaceAll("\\+", "%20")));
         } catch (UnsupportedEncodingException e) {
           // Should never happen, UTF-8 is always supported
@@ -540,7 +536,7 @@ public class HTMLCheckWarning {
     // add `Title` to the URL query string
     if (getTitle() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sTitle%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTitle()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sTitle%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getTitle()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -550,7 +546,7 @@ public class HTMLCheckWarning {
     // add `URL` to the URL query string
     if (getURL() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sURL%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getURL()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sURL%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getURL()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

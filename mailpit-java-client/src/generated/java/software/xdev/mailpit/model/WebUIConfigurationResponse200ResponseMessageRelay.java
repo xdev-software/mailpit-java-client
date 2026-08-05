@@ -15,7 +15,6 @@ package software.xdev.mailpit.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import java.util.Locale;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -247,6 +246,7 @@ public class WebUIConfigurationResponse200ResponseMessageRelay {
     this.smTPServer = smTPServer;
   }
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -290,10 +290,7 @@ public class WebUIConfigurationResponse200ResponseMessageRelay {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -331,7 +328,7 @@ public class WebUIConfigurationResponse200ResponseMessageRelay {
     // add `AllowedRecipients` to the URL query string
     if (getAllowedRecipients() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sAllowedRecipients%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAllowedRecipients()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sAllowedRecipients%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAllowedRecipients()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -341,7 +338,7 @@ public class WebUIConfigurationResponse200ResponseMessageRelay {
     // add `BlockedRecipients` to the URL query string
     if (getBlockedRecipients() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sBlockedRecipients%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getBlockedRecipients()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sBlockedRecipients%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getBlockedRecipients()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -351,7 +348,7 @@ public class WebUIConfigurationResponse200ResponseMessageRelay {
     // add `Enabled` to the URL query string
     if (getEnabled() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sEnabled%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEnabled()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sEnabled%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getEnabled()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -361,7 +358,7 @@ public class WebUIConfigurationResponse200ResponseMessageRelay {
     // add `OverrideFrom` to the URL query string
     if (getOverrideFrom() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sOverrideFrom%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getOverrideFrom()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sOverrideFrom%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getOverrideFrom()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -371,7 +368,7 @@ public class WebUIConfigurationResponse200ResponseMessageRelay {
     // add `PreserveMessageIDs` to the URL query string
     if (getPreserveMessageIDs() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sPreserveMessageIDs%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPreserveMessageIDs()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sPreserveMessageIDs%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getPreserveMessageIDs()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -381,7 +378,7 @@ public class WebUIConfigurationResponse200ResponseMessageRelay {
     // add `ReturnPath` to the URL query string
     if (getReturnPath() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sReturnPath%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getReturnPath()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sReturnPath%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getReturnPath()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -391,7 +388,7 @@ public class WebUIConfigurationResponse200ResponseMessageRelay {
     // add `SMTPServer` to the URL query string
     if (getSmTPServer() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sSMTPServer%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSmTPServer()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sSMTPServer%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSmTPServer()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

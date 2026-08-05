@@ -14,7 +14,7 @@ You can find out how the generated API might be used by having a look at [the te
 [Installation guide for the latest release](https://github.com/xdev-software/mailpit-java-client/releases/latest#Installation)
 
 ## Support
-If you need support as soon as possible and you can't wait for any pull request, feel free to use [our support](https://xdev.software/en/services/support).
+If you need support as soon as possible and you can't wait for any pull request, feel free to use [our support](https://xdev.software/en/services-products/support).
 
 ## Contributing
 See the [contributing guide](./CONTRIBUTING.md) for detailed instructions on how to get started with our project.

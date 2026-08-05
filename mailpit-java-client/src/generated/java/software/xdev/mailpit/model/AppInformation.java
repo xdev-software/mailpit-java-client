@@ -15,11 +15,9 @@ package software.xdev.mailpit.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import java.util.Locale;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
@@ -287,6 +285,7 @@ public class AppInformation {
     this.version = version;
   }
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -332,10 +331,7 @@ public class AppInformation {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -373,7 +369,7 @@ public class AppInformation {
     // add `Database` to the URL query string
     if (getDatabase() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sDatabase%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDatabase()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sDatabase%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDatabase()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -383,7 +379,7 @@ public class AppInformation {
     // add `DatabaseSize` to the URL query string
     if (getDatabaseSize() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sDatabaseSize%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDatabaseSize()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sDatabaseSize%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDatabaseSize()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -393,7 +389,7 @@ public class AppInformation {
     // add `LatestVersion` to the URL query string
     if (getLatestVersion() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sLatestVersion%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLatestVersion()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sLatestVersion%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLatestVersion()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -403,7 +399,7 @@ public class AppInformation {
     // add `Messages` to the URL query string
     if (getMessages() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sMessages%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMessages()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sMessages%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMessages()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -419,8 +415,8 @@ public class AppInformation {
     if (getTags() != null) {
       for (String _key : getTags().keySet()) {
         try {
-          joiner.add(String.format(Locale.ROOT, "%sTags%s%s=%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format(Locale.ROOT, "%s%d%s", containerPrefix, _key, containerSuffix),
+          joiner.add(String.format(java.util.Locale.ROOT, "%sTags%s%s=%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, _key, containerSuffix),
               getTags().get(_key), URLEncoder.encode(String.valueOf(getTags().get(_key)), "UTF-8").replaceAll("\\+", "%20")));
         } catch (UnsupportedEncodingException e) {
           // Should never happen, UTF-8 is always supported
@@ -432,7 +428,7 @@ public class AppInformation {
     // add `Unread` to the URL query string
     if (getUnread() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sUnread%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getUnread()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sUnread%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getUnread()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -442,7 +438,7 @@ public class AppInformation {
     // add `Version` to the URL query string
     if (getVersion() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sVersion%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getVersion()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sVersion%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getVersion()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

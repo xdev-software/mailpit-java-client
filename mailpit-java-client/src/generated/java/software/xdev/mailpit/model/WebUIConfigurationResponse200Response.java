@@ -15,7 +15,6 @@ package software.xdev.mailpit.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import java.util.Locale;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -218,6 +217,7 @@ public class WebUIConfigurationResponse200Response {
     this.spamAssassin = spamAssassin;
   }
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -259,10 +259,7 @@ public class WebUIConfigurationResponse200Response {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -300,7 +297,7 @@ public class WebUIConfigurationResponse200Response {
     // add `ChaosEnabled` to the URL query string
     if (getChaosEnabled() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sChaosEnabled%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getChaosEnabled()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sChaosEnabled%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getChaosEnabled()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -310,7 +307,7 @@ public class WebUIConfigurationResponse200Response {
     // add `DuplicatesIgnored` to the URL query string
     if (getDuplicatesIgnored() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sDuplicatesIgnored%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDuplicatesIgnored()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sDuplicatesIgnored%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getDuplicatesIgnored()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -320,7 +317,7 @@ public class WebUIConfigurationResponse200Response {
     // add `HideDeleteAllButton` to the URL query string
     if (getHideDeleteAllButton() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sHideDeleteAllButton%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getHideDeleteAllButton()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sHideDeleteAllButton%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getHideDeleteAllButton()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -330,7 +327,7 @@ public class WebUIConfigurationResponse200Response {
     // add `Label` to the URL query string
     if (getLabel() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sLabel%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLabel()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sLabel%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getLabel()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -345,7 +342,7 @@ public class WebUIConfigurationResponse200Response {
     // add `SpamAssassin` to the URL query string
     if (getSpamAssassin() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sSpamAssassin%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSpamAssassin()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sSpamAssassin%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSpamAssassin()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

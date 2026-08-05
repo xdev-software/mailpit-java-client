@@ -15,11 +15,9 @@ package software.xdev.mailpit.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import java.util.Locale;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -96,6 +94,7 @@ public class ChaosTrigger {
     this.probability = probability;
   }
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -129,10 +128,7 @@ public class ChaosTrigger {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -170,7 +166,7 @@ public class ChaosTrigger {
     // add `ErrorCode` to the URL query string
     if (getErrorCode() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sErrorCode%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getErrorCode()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sErrorCode%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getErrorCode()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -180,7 +176,7 @@ public class ChaosTrigger {
     // add `Probability` to the URL query string
     if (getProbability() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sProbability%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getProbability()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sProbability%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getProbability()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

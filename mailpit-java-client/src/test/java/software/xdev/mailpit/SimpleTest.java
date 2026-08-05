@@ -31,6 +31,7 @@ import org.simplejavamail.api.mailer.Mailer;
 import org.simplejavamail.api.mailer.config.TransportStrategy;
 import org.simplejavamail.email.EmailBuilder;
 import org.simplejavamail.mailer.MailerBuilder;
+import org.simplejavamail.recipient.RecipientBuilder;
 
 import software.xdev.mailpit.api.MessagesApi;
 import software.xdev.mailpit.client.ApiClient;
@@ -52,7 +53,7 @@ class SimpleTest
 		{
 			mailpitContainer.start();
 			
-			final String to = "receiver@test.localhost";
+			final String toAddress = "receiver@test.localhost";
 			final String subject = "Test Subject";
 			final String plainText = "Test Plain Text";
 			
@@ -67,7 +68,11 @@ class SimpleTest
 				mailer.sendMail(
 					EmailBuilder.startingBlank()
 						.from(user)
-						.to(to)
+						.withRecipients(new RecipientBuilder()
+							.withType(jakarta.mail.Message.RecipientType.TO)
+							.withAddress(toAddress)
+							.withName("Max Mustermann")
+							.build())
 						.withSubject(subject)
 						.withPlainText(plainText)
 						.buildEmail());
@@ -87,7 +92,9 @@ class SimpleTest
 			
 			Assertions.assertAll(
 				() -> assertEquals(user, message.getFrom().getAddress()),
-				() -> assertEquals(to, message.getTo().stream().findFirst().map(Address::getAddress).orElse(null)),
+				() -> assertEquals(
+					toAddress,
+					message.getTo().stream().findFirst().map(Address::getAddress).orElse(null)),
 				() -> assertEquals(subject, message.getSubject()),
 				() -> assertEquals(plainText, message.getSnippet())
 			);
@@ -98,8 +105,7 @@ class SimpleTest
 	{
 		final Duration defaultTimeout = Duration.ofSeconds(30);
 		
-		final ApiClient client = new ApiClient();
-		client.setHttpClient(HttpClientBuilder.create()
+		final ApiClient client = new ApiClient(HttpClientBuilder.create()
 			.setConnectionManager(PoolingHttpClientConnectionManagerBuilder.create()
 				.setDefaultConnectionConfig(ConnectionConfig.custom()
 					.setConnectTimeout(Timeout.of(defaultTimeout))

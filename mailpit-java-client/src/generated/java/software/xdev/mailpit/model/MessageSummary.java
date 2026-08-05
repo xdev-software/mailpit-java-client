@@ -15,11 +15,9 @@ package software.xdev.mailpit.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import java.util.Locale;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
@@ -531,6 +529,7 @@ public class MessageSummary {
     this.username = username;
   }
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -590,10 +589,7 @@ public class MessageSummary {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -631,7 +627,7 @@ public class MessageSummary {
     // add `Attachments` to the URL query string
     if (getAttachments() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sAttachments%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAttachments()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sAttachments%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getAttachments()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -642,8 +638,8 @@ public class MessageSummary {
     if (getBcc() != null) {
       for (int i = 0; i < getBcc().size(); i++) {
         if (getBcc().get(i) != null) {
-          joiner.add(getBcc().get(i).toUrlQueryString(String.format(Locale.ROOT, "%sBcc%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format(Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getBcc().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sBcc%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
@@ -652,8 +648,8 @@ public class MessageSummary {
     if (getCc() != null) {
       for (int i = 0; i < getCc().size(); i++) {
         if (getCc().get(i) != null) {
-          joiner.add(getCc().get(i).toUrlQueryString(String.format(Locale.ROOT, "%sCc%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format(Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getCc().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sCc%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
@@ -661,7 +657,7 @@ public class MessageSummary {
     // add `Created` to the URL query string
     if (getCreated() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sCreated%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCreated()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sCreated%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getCreated()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -676,7 +672,7 @@ public class MessageSummary {
     // add `ID` to the URL query string
     if (getID() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sID%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getID()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sID%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getID()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -686,7 +682,7 @@ public class MessageSummary {
     // add `MessageID` to the URL query string
     if (getMessageID() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sMessageID%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMessageID()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sMessageID%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMessageID()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -696,7 +692,7 @@ public class MessageSummary {
     // add `Read` to the URL query string
     if (getRead() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sRead%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRead()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sRead%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getRead()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -707,8 +703,8 @@ public class MessageSummary {
     if (getReplyTo() != null) {
       for (int i = 0; i < getReplyTo().size(); i++) {
         if (getReplyTo().get(i) != null) {
-          joiner.add(getReplyTo().get(i).toUrlQueryString(String.format(Locale.ROOT, "%sReplyTo%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format(Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getReplyTo().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sReplyTo%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
@@ -716,7 +712,7 @@ public class MessageSummary {
     // add `Size` to the URL query string
     if (getSize() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sSize%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSize()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sSize%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSize()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -726,7 +722,7 @@ public class MessageSummary {
     // add `Snippet` to the URL query string
     if (getSnippet() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sSnippet%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSnippet()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sSnippet%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSnippet()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -736,7 +732,7 @@ public class MessageSummary {
     // add `Subject` to the URL query string
     if (getSubject() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sSubject%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSubject()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sSubject%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSubject()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -747,8 +743,8 @@ public class MessageSummary {
     if (getTags() != null) {
       for (int i = 0; i < getTags().size(); i++) {
         try {
-          joiner.add(String.format(Locale.ROOT, "%sTags%s%s=%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format(Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
+          joiner.add(String.format(java.util.Locale.ROOT, "%sTags%s%s=%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
               URLEncoder.encode(String.valueOf(getTags().get(i)), "UTF-8").replaceAll("\\+", "%20")));
         } catch (UnsupportedEncodingException e) {
           // Should never happen, UTF-8 is always supported
@@ -761,8 +757,8 @@ public class MessageSummary {
     if (getTo() != null) {
       for (int i = 0; i < getTo().size(); i++) {
         if (getTo().get(i) != null) {
-          joiner.add(getTo().get(i).toUrlQueryString(String.format(Locale.ROOT, "%sTo%s%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format(Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
+          joiner.add(getTo().get(i).toUrlQueryString(String.format(java.util.Locale.ROOT, "%sTo%s%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix))));
         }
       }
     }
@@ -770,7 +766,7 @@ public class MessageSummary {
     // add `Username` to the URL query string
     if (getUsername() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sUsername%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getUsername()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sUsername%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getUsername()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

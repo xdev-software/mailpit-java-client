@@ -12,7 +12,7 @@
 
 package software.xdev.mailpit.api;
 
-import com.fasterxml.jackson.core.type.TypeReference;
+import tools.jackson.core.type.TypeReference;
 
 import software.xdev.mailpit.client.ApiException;
 import software.xdev.mailpit.client.ApiClient;
@@ -29,7 +29,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.StringJoiner;
 

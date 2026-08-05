@@ -15,7 +15,6 @@ package software.xdev.mailpit.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import java.util.Locale;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -247,6 +246,7 @@ public class AppInformationRuntimeStats {
     this.uptime = uptime;
   }
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -290,10 +290,7 @@ public class AppInformationRuntimeStats {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -331,7 +328,7 @@ public class AppInformationRuntimeStats {
     // add `Memory` to the URL query string
     if (getMemory() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sMemory%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMemory()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sMemory%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMemory()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -341,7 +338,7 @@ public class AppInformationRuntimeStats {
     // add `MessagesDeleted` to the URL query string
     if (getMessagesDeleted() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sMessagesDeleted%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMessagesDeleted()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sMessagesDeleted%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getMessagesDeleted()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -351,7 +348,7 @@ public class AppInformationRuntimeStats {
     // add `SMTPAccepted` to the URL query string
     if (getSmTPAccepted() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sSMTPAccepted%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSmTPAccepted()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sSMTPAccepted%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSmTPAccepted()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -361,7 +358,7 @@ public class AppInformationRuntimeStats {
     // add `SMTPAcceptedSize` to the URL query string
     if (getSmTPAcceptedSize() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sSMTPAcceptedSize%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSmTPAcceptedSize()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sSMTPAcceptedSize%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSmTPAcceptedSize()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -371,7 +368,7 @@ public class AppInformationRuntimeStats {
     // add `SMTPIgnored` to the URL query string
     if (getSmTPIgnored() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sSMTPIgnored%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSmTPIgnored()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sSMTPIgnored%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSmTPIgnored()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -381,7 +378,7 @@ public class AppInformationRuntimeStats {
     // add `SMTPRejected` to the URL query string
     if (getSmTPRejected() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sSMTPRejected%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSmTPRejected()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sSMTPRejected%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getSmTPRejected()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -391,7 +388,7 @@ public class AppInformationRuntimeStats {
     // add `Uptime` to the URL query string
     if (getUptime() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sUptime%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getUptime()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sUptime%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getUptime()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

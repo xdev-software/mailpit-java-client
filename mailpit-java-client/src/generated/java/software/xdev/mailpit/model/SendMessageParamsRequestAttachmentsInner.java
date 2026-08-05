@@ -15,7 +15,6 @@ package software.xdev.mailpit.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import java.util.Locale;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -157,6 +156,7 @@ public class SendMessageParamsRequestAttachmentsInner {
     this.filename = filename;
   }
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -194,10 +194,7 @@ public class SendMessageParamsRequestAttachmentsInner {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -235,7 +232,7 @@ public class SendMessageParamsRequestAttachmentsInner {
     // add `Content` to the URL query string
     if (getContent() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sContent%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getContent()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sContent%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getContent()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -245,7 +242,7 @@ public class SendMessageParamsRequestAttachmentsInner {
     // add `ContentID` to the URL query string
     if (getContentID() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sContentID%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getContentID()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sContentID%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getContentID()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -255,7 +252,7 @@ public class SendMessageParamsRequestAttachmentsInner {
     // add `ContentType` to the URL query string
     if (getContentType() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sContentType%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getContentType()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sContentType%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getContentType()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -265,7 +262,7 @@ public class SendMessageParamsRequestAttachmentsInner {
     // add `Filename` to the URL query string
     if (getFilename() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sFilename%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFilename()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sFilename%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getFilename()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);

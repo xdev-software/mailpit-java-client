@@ -15,11 +15,9 @@ package software.xdev.mailpit.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import java.util.Locale;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -167,6 +165,7 @@ public class ListUnsubscribe {
     this.links = links;
   }
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -204,10 +203,7 @@ public class ListUnsubscribe {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
   /**
@@ -245,7 +241,7 @@ public class ListUnsubscribe {
     // add `Errors` to the URL query string
     if (getErrors() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sErrors%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getErrors()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sErrors%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getErrors()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -255,7 +251,7 @@ public class ListUnsubscribe {
     // add `Header` to the URL query string
     if (getHeader() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sHeader%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getHeader()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sHeader%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getHeader()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -265,7 +261,7 @@ public class ListUnsubscribe {
     // add `HeaderPost` to the URL query string
     if (getHeaderPost() != null) {
       try {
-        joiner.add(String.format(Locale.ROOT, "%sHeaderPost%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getHeaderPost()), "UTF-8").replaceAll("\\+", "%20")));
+        joiner.add(String.format(java.util.Locale.ROOT, "%sHeaderPost%s=%s", prefix, suffix, URLEncoder.encode(String.valueOf(getHeaderPost()), "UTF-8").replaceAll("\\+", "%20")));
       } catch (UnsupportedEncodingException e) {
         // Should never happen, UTF-8 is always supported
         throw new RuntimeException(e);
@@ -276,8 +272,8 @@ public class ListUnsubscribe {
     if (getLinks() != null) {
       for (int i = 0; i < getLinks().size(); i++) {
         try {
-          joiner.add(String.format(Locale.ROOT, "%sLinks%s%s=%s", prefix, suffix,
-              "".equals(suffix) ? "" : String.format(Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
+          joiner.add(String.format(java.util.Locale.ROOT, "%sLinks%s%s=%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
               URLEncoder.encode(String.valueOf(getLinks().get(i)), "UTF-8").replaceAll("\\+", "%20")));
         } catch (UnsupportedEncodingException e) {
           // Should never happen, UTF-8 is always supported

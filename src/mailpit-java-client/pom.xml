@@ -100,7 +100,7 @@
 		<dependency>
 			<groupId>org.simplejavamail</groupId>
 			<artifactId>simple-java-mail</artifactId>
-			<version>9.1.5</version>
+			<version>9.3.5</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -129,7 +129,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.5.6</version>
+				<version>3.6.0</version>
 				<configuration>
 					<skipTests>${skipTests}</skipTests>
 				</configuration>

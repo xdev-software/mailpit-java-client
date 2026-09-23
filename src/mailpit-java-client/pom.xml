@@ -20,7 +20,7 @@
 		<generatedDirRelative>src/generated/java</generatedDirRelative>
 		<generatedDir>${project.basedir}/${generatedDirRelative}</generatedDir>
 
-		<slf4j-version>2.0.18</slf4j-version>
+		<slf4j-version>2.0.20</slf4j-version>
 
 		<log4j-version>2.26.1</log4j-version>
 
@@ -310,6 +310,9 @@
 						<artifactId>maven-pmd-plugin</artifactId>
 						<version>3.28.0</version>
 						<configuration>
+							<rulesets>
+								<ruleset>../../.config/pmd/java/ruleset.xml</ruleset>
+							</rulesets>
 							<excludeRoots>
 								<excludeRoot>${generatedDir}</excludeRoot>
 							</excludeRoots>

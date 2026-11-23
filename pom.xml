@@ -7,13 +7,12 @@
 
 	<groupId>software.xdev</groupId>
 	<artifactId>root</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.2.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<url>https://github.com/xdev-software/template-placeholder</url>
+	<url>https://github.com/xdev-software/mailpit-java-client</url>
 
 	<modules>
 		<module>src</module>
-		<module>demos</module>
 	</modules>
 
 	<properties>
@@ -28,11 +27,11 @@
 		child.scm.connection.inherit.append.path="false"
 		child.scm.developerConnection.inherit.append.path="false"
 		child.scm.url.inherit.append.path="false">
-		<url>https://github.com/xdev-software/template-placeholder</url>
-		<connection>scm:git:https://github.com/xdev-software/template-placeholder.git</connection>
+		<url>https://github.com/xdev-software/mailpit-java-client</url>
+		<connection>scm:git:https://github.com/xdev-software/mailpit-java-client.git</connection>
 	</scm>
 
-	<inceptionYear>2026</inceptionYear>
+	<inceptionYear>2025</inceptionYear>
 
 	<organization>
 		<name>XDEV Software</name>
